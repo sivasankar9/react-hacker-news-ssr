@@ -46,7 +46,16 @@ const config = {
         NODE_ENV: JSON.stringify('production')
       }
     })
-  ]
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.scss$/,
+        loader: "style-loader!css-loader!sass-loader",
+        exclude: /node_modules/
+      }
+    ]
+  }
 };
 
 module.exports = merge(baseConfig, config);
