@@ -26,7 +26,7 @@ const App = props => {
     <div>
       <Preloader source={loadingState}>
         <HakerNews.Provider value={{ upVote, hits, hideNews }}>
-          <Table />
+           <Table />
         </HakerNews.Provider>
       </Preloader>
     </div>
