@@ -8,14 +8,14 @@
   "main": "index.js",
   "scripts": {
     "start": "node build/bundle.js",
-    "build": "rm -rf build && rm -rf public && webpack  --config webpack.server.js && webpack -p --config webpack.client.prod.js --mode production",
-    "heroku-postbuild": "npm install && npm run build:prod",
+    "build": "rm -rf build && rm -rf public && webpack  --config webpack.server.js && webpack --config webpack.client.prod.js",
+    "heroku-postbuild": "npm install && npm run build",
     "webpack-prod": "webpack -p --progress --config webpack.client.prod.js --mode production",
     "dev": "npm run build-server && npm-run-all --parallel dev:*",
     "build-server": "webpack --config webpack.server.js",
     "dev:build-server": "webpack --config webpack.server.js --watch",
     "dev:build-client": "webpack --config webpack.client.js --watch",
-    "dev:server": "nodemon --watch build --exec \"node build/bundle.js\"",
+    "dev:start": "nodemon --watch build --exec node build/bundle.js",
     "precommit": "pretty-quick --staged"
   },
   "author": "guntupalli sivasankar",
