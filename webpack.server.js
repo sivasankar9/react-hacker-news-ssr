@@ -1,7 +1,7 @@
-const path = require('path');
-const merge = require('webpack-merge');
-const webpackNodeExternals = require('webpack-node-externals');
-const baseConfig = require('./webpack.base.js');
+const path = require('path')
+const merge = require('webpack-merge')
+const webpackNodeExternals = require('webpack-node-externals')
+const baseConfig = require('./webpack.base.js')
 
 const config = {
   target: 'node',
@@ -10,14 +10,14 @@ const config = {
   externals: [webpackNodeExternals()],
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'build')
+    path: path.resolve(__dirname, 'build'),
   },
   module: {
     rules: [
-      { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
-      { test: /\.(scss|css)$/, loader: "ignore-loader" }
-    ]
-  }
-};
+      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
+      { test: /\.(scss|css)$/, loader: 'ignore-loader' },
+    ],
+  },
+}
 
-module.exports = merge(baseConfig, config);
+module.exports = merge(baseConfig, config)

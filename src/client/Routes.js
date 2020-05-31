@@ -1,6 +1,6 @@
-import HomePage from './components';
-import NotFoundPage from './components/NotFoundPage';
-import App from './App';
+import HomePage from './components'
+import NotFoundPage from './components/NotFoundPage'
+import App from './App'
 
 export default [
   {
@@ -15,4 +15,4 @@ export default [
       },
     ],
   },
-];
+]

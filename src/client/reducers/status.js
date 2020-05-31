@@ -1,14 +1,13 @@
-
 const initialState = {
-  status: "IDLE"
+  status: 'IDLE',
 }
 export default (state = initialState, action) => {
   switch (action.type) {
-    case "IDLE":
-    case "LOADING":
-    case "LOADED":
-      return action.payload;
+    case 'IDLE':
+    case 'LOADING':
+    case 'LOADED':
+      return action.payload
     default:
-      return state;
+      return state
   }
-};
+}

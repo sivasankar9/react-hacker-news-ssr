@@ -4,4 +4,4 @@ export default Object.freeze({
   HIDE_NEWS: 'HIDE_NEWS',
   ERROR: 'ERROR',
   LOADING: 'LOADING',
-});
+})

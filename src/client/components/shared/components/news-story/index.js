@@ -1,26 +1,27 @@
-import React, {useContext} from 'react';
-import Graph from '../graph';
-import HakerNewscontext from '../../context/haker-news-context';
-import Header from '../header';
-import LineItem from '../news-line-item';
-import { Link } from 'react-router-dom';
-import Table from '../Table';
+import React, { useContext } from 'react'
+import Graph from '../graph'
+import HakerNewscontext from '../../context/haker-news-context'
+import Header from '../header'
+import LineItem from '../news-line-item'
+import { Link } from 'react-router-dom'
+import Table from '../Table'
 
 const BuildLinteItems = () => {
+  const Consumer = useContext(HakerNewscontext)
 
-  const Consumer = useContext(HakerNewscontext);
+  return Consumer.hits.map((item) => {
+    return <LineItem key={item.objectID} story={item} />
+  })
+}
 
-    return Consumer.hits.map(item => {
-
-        return <LineItem key={item.objectID} story = {item} />;
-
-    });
-
-};
-
-export default () => <Table>
+export default () => (
+  <Table>
     <Header />
-     <BuildLinteItems />
-   <footer><Link to={'/search?tags=front_page'}>Previous</Link> | <Link to={`/search?query=page${2}`}>Next</Link> </footer>
+    <BuildLinteItems />
+    <footer>
+      <Link to={'/search?tags=front_page'}>Previous</Link> |{' '}
+      <Link to={`/search?query=page${2}`}>Next</Link>{' '}
+    </footer>
     <Graph />
-</Table>;
+  </Table>
+)

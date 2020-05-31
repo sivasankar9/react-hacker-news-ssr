@@ -1,20 +1,17 @@
 // import actions from '../actions-list';
 import Actions from '.'
-import { getHackerNews } from '../service';
+import { getHackerNews } from '../service'
 
 export default (query = '?tags=front_page') => async (dispatch) => {
-  try{
+  try {
+    dispatch(Actions.loading({ status: 'LOADING' }))
 
-    dispatch(Actions.loading({status: 'LOADING'}));
+    const data = await getHackerNews(query)
 
-    const data = await getHackerNews(query);
+    await dispatch(Actions.loading({ status: 'LOADED' }))
 
-    await dispatch(Actions.loading({status: 'LOADED'}));
-
-    dispatch(Actions.updateNews(data));
-
-  }catch(e){
-    dispatch(Actions.error(e.message));
+    dispatch(Actions.updateNews(data))
+  } catch (e) {
+    dispatch(Actions.error(e.message))
   }
-
-};
+}
