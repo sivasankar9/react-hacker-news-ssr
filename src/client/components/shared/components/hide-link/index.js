@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import HakerNewscontext from '../../context/haker-news-context'
+import PropTypes from 'prop-types'
 
 const HideItem = ({ objectID }) => {
   const Consumer = useContext(HakerNewscontext)
@@ -16,5 +17,10 @@ const HideItem = ({ objectID }) => {
 }
 
 HideItem.display = 'HideItem';
+
+HideItem.propTypes = {
+  objectID: PropTypes.string.isRequired
+}
+
 
 export default HideItem;

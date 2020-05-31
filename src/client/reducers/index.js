@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import hackerNews from './hacker-news'
 import error from './error'
+import hackerNews from './hacker-news'
 import status from './status'
 
 export default combineReducers({

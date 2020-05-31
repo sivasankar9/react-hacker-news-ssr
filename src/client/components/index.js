@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react'
-import { connect } from 'react-redux'
-import PropTypes from 'prop-types'
-import { Helmet } from 'react-helmet'
-import Table from './shared/components/news-story'
 import Actions from '../actions'
-import { filterNews } from '../../helpers/utils'
 import HakerNews from './shared/context/haker-news-context'
+import { Helmet } from 'react-helmet'
 import Preloader from './PreLoader'
+import PropTypes from 'prop-types'
+import Table from './shared/components/news-story'
+import { connect } from 'react-redux'
+import { filterNews } from '../../helpers/utils'
 
 const App = (props) => {
   const {
@@ -51,8 +51,17 @@ const App = (props) => {
 }
 
 App.propTypes = {
-  hits: PropTypes.arrayOf(PropTypes.any),
-  hackerNews: PropTypes.arrayOf(PropTypes.any),
+  hackerNews: PropTypes.arrayOf(PropTypes.shape({
+    hits: PropTypes.array,
+    page: PropTypes.number,
+    hitsPerPage: PropTypes.number,
+    nbHits: PropTypes.number,
+    nbPages: PropTypes.number,
+    exhaustiveNbHits: PropTypes.boolean,
+    query: PropTypes.string,
+    params: PropTypes.string,
+    processingTimeMS: PropTypes.number,
+  })),
   fetchNews: PropTypes.func.isRequired,
   hideNews: PropTypes.func.isRequired,
   upVote: PropTypes.func.isRequired,

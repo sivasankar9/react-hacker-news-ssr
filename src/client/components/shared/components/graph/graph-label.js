@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 
-export default (props) => {
+const GraphLabel = (props) => {
   const { x, y, label } = props
 
   return (
@@ -17,3 +18,13 @@ export default (props) => {
     </text>
   )
 }
+
+GraphLabel.propTypes = {
+  x: PropTypes.number.isRequired,
+  y: PropTypes.number.isRequired,
+  label: PropTypes.string.isRequired
+}
+
+GraphLabel.display = 'GraphLabel';
+
+export default GraphLabel

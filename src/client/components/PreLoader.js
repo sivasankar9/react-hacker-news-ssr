@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
+import React from 'react'
 
 const Spinner = () => (
   <>
@@ -17,8 +17,11 @@ const PreLoader = (props) => {
   )
 }
 
-PreLoader.propTypes = {}
-
-PreLoader.defaultProps = {}
+PreLoader.propTypes = {
+  children: PropTypes.element.isRequired,
+  source: PropTypes.objectOf(
+    PropTypes.string.isRequired
+  )
+}
 
 export default PreLoader
