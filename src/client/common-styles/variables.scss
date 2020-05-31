@@ -1,0 +1,41 @@
+
+//colors
+
+$blackColor:#000;
+$organeColor:#ff742b;
+$grayColor:#828282;
+$silverColor:#c0c0c0c5;
+$whiteColor:#ffff;
+
+
+//others
+
+$fontFamily: Arial, Geneva, Tahoma, sans-serif;
+
+$flex:flex;
+$none:none;
+$fontSize :10.6667px;
+$paddingRight:2px;
+$reset: 0;
+
+//reset
+
+h1,p,ol,ul {
+    margin: $reset;
+    padding: $reset;
+}
+
+ol, li{
+  list-style-type: none;
+}
+a{
+  text-decoration: none;
+  font-family: $fontFamily;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+$fontWeightMedium: 600;
+$fontWeightLarge: 800;
+$fontWeightHigh: 900;

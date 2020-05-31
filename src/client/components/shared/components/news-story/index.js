@@ -1,3 +1,4 @@
+import './style.scss';
 import React, { useContext } from 'react'
 import Graph from '../graph'
 import HakerNewscontext from '../../context/haker-news-context'
@@ -14,14 +15,18 @@ const BuildLinteItems = () => {
   })
 }
 
-export default () => (
-  <Table>
-    <Header />
+const NewsStory = () => <Table>
+  <Header />
+  <section>
     <BuildLinteItems />
-    <footer>
-      <Link to={'/search?tags=front_page'}>Previous</Link> |{' '}
-      <Link to={`/search?query=page${2}`}>Next</Link>{' '}
-    </footer>
-    <Graph />
-  </Table>
-)
+  </section>
+  <section className='nav-pre-next'>
+    <Link to={'/search?tags=front_page'} className='prev'>Previous</Link> |{' '}
+    <Link to={`/search?query=page${2}`} className='next'>Next</Link>{' '}
+  </section>
+  <Graph />
+</Table>
+
+NewsStory.display = 'NewsStory'
+
+export default NewsStory;

@@ -1,5 +1,6 @@
+@import "../../../../../client/common-styles/variables.scss";
 .graph-warpper{
-    border-top: 5px solid #ff742b;
-    border-bottom: 5px solid #ff742b;
+    border-top: 5px solid $organeColor;
+    border-bottom: 5px solid $organeColor;
     padding:10px 10px;
 }

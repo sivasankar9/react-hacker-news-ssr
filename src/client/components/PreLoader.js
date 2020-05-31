@@ -11,9 +11,9 @@ const PreLoader = (props) => {
   const { status } = props.source
 
   return (
-    <div className="ui-loader">
+    <section>
       {status === 'LOADED' ? <>{props.children}</> : <Spinner />}
-    </div>
+    </section>
   )
 }
 
