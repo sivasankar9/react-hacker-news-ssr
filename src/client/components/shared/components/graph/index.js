@@ -13,7 +13,7 @@ const Graph = () => {
   return (
     <section className="graph-warpper">
       <LineChart
-        width={1200}
+        width={1300}
         height={300}
         data={graphData}
         fontFamily="sans-serif"
