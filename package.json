@@ -8,6 +8,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node build/bundle.js",
+    "eslint": "eslint src",
     "build": "rm -rf build && rm -rf public && webpack  --config webpack.server.js && webpack --config webpack.client.prod.js",
     "heroku-postbuild": "npm install && npm run build",
     "webpack-prod": "webpack -p --progress --config webpack.client.prod.js --mode production",
@@ -16,7 +17,8 @@
     "dev:build-server": "webpack --config webpack.server.js --watch",
     "dev:build-client": "webpack --config webpack.client.js --watch",
     "dev:start": "nodemon --watch build --exec node build/bundle.js",
-    "precommit": "pretty-quick --staged"
+    "precommit": "pretty-quick --staged",
+    "format": "prettier-eslint --write \"{,!(node_modules)/**/}*.{js,jsx}\""
   },
   "author": "guntupalli sivasankar",
   "license": "ISC",
@@ -32,6 +34,7 @@
     "localstorage-polyfill": "^1.0.1",
     "nodemon": "2.0.4",
     "npm-run-all": "4.1.5",
+    "prettier-eslint-cli": "^5.0.0",
     "prop-types": "^15.7.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",

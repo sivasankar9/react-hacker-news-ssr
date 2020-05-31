@@ -1,8 +1,6 @@
 # ignore directories
 node_modules/
-.vscode/
-node_modules/
 build
-bundle.js
-build/bundle.js
+bundle
 package-lock.json
+public
