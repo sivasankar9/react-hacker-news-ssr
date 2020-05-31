@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import HakerNewscontext from '../../context/haker-news-context'
 import PropTypes from 'prop-types'
+import './style.scss'
 
 const Upvote = ({ objectID }) => {
   const Consumer = useContext(HakerNewscontext)
@@ -8,12 +9,11 @@ const Upvote = ({ objectID }) => {
   return (
     <div>
       <p
+        className="votearrow"
         onClick={() => {
           return Consumer.upVote({ objectID })
         }}
-      >
-        ^
-      </p>
+      ></p>
     </div>
   )
 }

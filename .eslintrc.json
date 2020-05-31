@@ -1,7 +1,8 @@
 {
   "env": {
     "browser": true,
-    "es6": true
+    "es6": true,
+    "node": true
   },
   "parser": "babel-eslint",
   "parserOptions": {
@@ -15,19 +16,15 @@
   "plugins": ["prettier", "react"],
   "extends": ["prettier", "eslint:recommended", "plugin:react/recommended"],
   "rules": {
-    "prettier/prettier": "error",
-    "react/display-name": [
-      "error"
-    ],
+    "sort-imports": 2,
+    "no-console": 2,
+    "no-undef": 2,
+    "no-undef-init": 2,
+    "no-undefined": 2,
+    "no-unused-vars": 2,
+    "eol-last": 2,
+    "newline-after-var": 2
 
-    "react/prop-types": [
-      "error",
-      {
-        "ignore": [],
-        "customValidators": [],
-        "skipUndeclared": false
-      }
-    ]
   },
   "settings": {
     "react": {

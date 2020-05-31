@@ -40,8 +40,12 @@ ErrorBoundary.propTypes = {
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
   ]).isRequired,
+  errorMsg: PropTypes.string.isRequired,
 }
 
+ErrorBoundary.defaultProps = {
+  errorMsg: '',
+}
 const mapStateToProps = (state) => ({
   errorMsg: state.error,
 })
