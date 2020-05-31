@@ -1,13 +1,10 @@
-/* eslint-disable no-console */
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
 import '@babel/polyfill'
+import Routes from './client/Routes'
+import compression from 'compression'
+import createStore from './store/createStore'
 import express from 'express'
 import { matchRoutes } from 'react-router-config'
-import compression from 'compression'
 import renderer from './helpers/renderer'
-import createStore from './store/createStore'
-import Routes from './client/Routes'
 
 const app = express()
 
@@ -38,7 +35,7 @@ app.get('*', (req, res) => {
     })
     .map((promise) => {
       if (promise) {
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
           promise.then(resolve).catch(resolve)
         })
       }
@@ -58,5 +55,6 @@ app.get('*', (req, res) => {
 })
 
 app.listen(port, () => {
+  // eslint-disable-next-line no-console
   console.log(`Listening on port: ${port}`)
 })

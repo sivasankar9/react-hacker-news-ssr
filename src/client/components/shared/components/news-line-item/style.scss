@@ -4,6 +4,21 @@ article:nth-child(even) {
   background-color: $silverColor;
 }
 
+@media screen and (min-width: 1200px) {
+  .news-details {
+    width: calc(85% - 10px);
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .news-details {
+    width: calc(85% - 10px);
+    margin: 0 auto;
+    flex-direction: column;
+  }
+}
+
 .news-story-item-wrapper {
   color: $blackColor;
   font-size: 14px;
@@ -11,9 +26,12 @@ article:nth-child(even) {
   font-family: $fontFamily;
   color: $blackColor;
   font-size: 11px;
+  word-break: break-all;
 
   .news-story-line-item {
     display: flex;
+
+
 
     .votearrow {
       width: 10px;
@@ -29,24 +47,34 @@ article:nth-child(even) {
     .vote-count {
       width: 60px;
     }
-    .news-title {
+
+    .news-details{
+      display: flex;
       padding: 0px 7px 0px 40px;
-      font-size: 13px;
-      font-weight: bold;
-    }
-    .nav-url-link {
-      padding: 2px 10px 0px 0px;
-      a {
-        color: $grayColor;
+
+      .news-title {
+        font-size: 13px;
+        font-weight: bold;
+      }
+      .nav-url-link {
+        padding: 2px 10px 0px 0px;
+        a {
+          color: $grayColor;
+        }
+      }
+      .author-title {
+        color:$blackColor;
+        padding: 2px 5px 0px 0px;
+      }
+      .elapsed-time{
+        padding: 2px 5px 0px 0px;
+        color:$grayColor;
+      }
+
+      .hide-link {
+        padding: 2px 0px 0px 0px;
       }
     }
-    .author-title {
-      color:$grayColor;
-      padding: 2px 5px 0px 0px;
-    }
-    .elapsed-time,
-    .hide-link {
-      padding: 2px 0px 0px 0px;
-    }
+
   }
 }

@@ -1,14 +1,13 @@
 import '@babel/polyfill'
+import { applyMiddleware, createStore } from 'redux'
+import { BrowserRouter } from 'react-router-dom'
+import { Provider } from 'react-redux'
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { BrowserRouter } from 'react-router-dom'
-
-import { applyMiddleware, createStore } from 'redux'
-import thunk from 'redux-thunk'
-import { Provider } from 'react-redux'
-import { renderRoutes } from 'react-router-config'
-import reducers from './reducers'
 import Routes from './Routes'
+import reducers from './reducers'
+import { renderRoutes } from 'react-router-config'
+import thunk from 'redux-thunk'
 
 const state = window.__PRELOADED_STATE__
 

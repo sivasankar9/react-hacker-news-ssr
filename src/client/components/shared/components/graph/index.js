@@ -5,7 +5,7 @@ import HakerNewscontext from '../../context/haker-news-context'
 import Label from './graph-label'
 import { buildGraphData } from '../../../shared/service/helpers'
 
-export default () => {
+const Graph = () => {
   const Consumer = useContext(HakerNewscontext)
 
   const graphData = buildGraphData(Consumer.hits)
@@ -40,3 +40,7 @@ export default () => {
     </section>
   )
 }
+
+export default Graph;
+
+Graph.display = 'Graph';

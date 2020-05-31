@@ -1,6 +1,7 @@
 const initialState = {
   status: 'IDLE',
 }
+
 export default (state = initialState, action) => {
   switch (action.type) {
     case 'IDLE':

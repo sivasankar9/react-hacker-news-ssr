@@ -1,3 +1,10 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 
-export default (props) => <>{props.children}</>
+const Table = (props) => <>{props.children}</>
+
+Table.propTypes = {
+  children: PropTypes.element.isRequired
+}
+
+export default Table
