@@ -1,9 +1,5 @@
 import React from 'react'
 
-export default ({ newsTitle }) => {
-  return (
-    <div>
-      <p>{newsTitle}</p>
-    </div>
-  )
-}
+const NewsTittle =({ newsTitle }) =><li className="news-title">{newsTitle}</li>
+
+export default NewsTittle;

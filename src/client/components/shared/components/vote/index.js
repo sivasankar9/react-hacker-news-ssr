@@ -1,9 +1,5 @@
 import React from 'react'
 
-export default ({ count }) => {
-  return (
-    <div>
-      <p>{count} ::</p>
-    </div>
-  )
-}
+ const Vote = ({ count }) => <li className="vote-count">{count}</li>
+
+ export default Vote;

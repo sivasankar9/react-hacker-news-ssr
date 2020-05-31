@@ -21,6 +21,7 @@ const App = (props) => {
   useEffect(() => {
     window.scrollTo(0, 0)
     const query = location.search
+
     fetchNews(query)
   }, [location])
 
@@ -40,14 +41,12 @@ const App = (props) => {
   }
 
   return (
-    <div>
-      <Preloader source={loadingState}>
-        {head()}
-        <HakerNews.Provider value={{ upVote, hits, hideNews }}>
-          <Table />
-        </HakerNews.Provider>
-      </Preloader>
-    </div>
+    <Preloader source={loadingState}>
+      {head()}
+      <HakerNews.Provider value={{ upVote, hits, hideNews }}>
+        <Table />
+      </HakerNews.Provider>
+    </Preloader>
   )
 }
 
@@ -66,9 +65,9 @@ App.propTypes = {
 App.defaultProps = {
   hits: [],
   hackerNews: [],
-  fetchNews: () => {},
-  hideNews: () => {},
-  upVote: () => {},
+  fetchNews: () => { },
+  hideNews: () => { },
+  upVote: () => { },
   loadingState: PropTypes.string,
   location: PropTypes.shape({
     search: PropTypes.string,

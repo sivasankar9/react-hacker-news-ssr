@@ -1,17 +1,20 @@
 import React, { useContext } from 'react'
 import HakerNewscontext from '../../context/haker-news-context'
 
-export default ({ objectID }) => {
+const HideItem = ({ objectID }) => {
   const Consumer = useContext(HakerNewscontext)
+
   return (
-    <div>
-      <p
+      <li className = 'hide-link'
         onClick={() => {
           return Consumer.hideNews({ objectID })
         }}
       >
-        [Hide] {objectID}
-      </p>
-    </div>
+        [Hide]
+      </li>
   )
 }
+
+HideItem.display = 'HideItem';
+
+export default HideItem;

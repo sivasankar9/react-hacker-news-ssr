@@ -1,0 +1,16 @@
+@import '../../../../common-styles/variables.scss';
+
+.nav-pre-next {
+  display: flex;
+  justify-content: flex-end;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 10px 0px 10px 0px;
+  color: $organeColor;
+  font-family: $fontFamily;
+
+  a {
+    padding: 0px 10px 0px 10px;
+    color: $organeColor;
+  }
+}
