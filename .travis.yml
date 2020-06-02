@@ -10,8 +10,8 @@ script:
 deploy:
   provider: heroku
 api_key:
-    secure: $API_KEY
+  secure: $API_KEY
 app: hacker-news-srr
-on:
-    repo: sivasankar9/react-hacker-news-ssr
-    branch: master
+true:
+  repo: sivasankar9/react-hacker-news-ssr
+  branch: master
