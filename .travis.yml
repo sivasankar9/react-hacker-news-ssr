@@ -1,16 +1,17 @@
 language: node_js
 node_js:
-  - "stable"
+- stable
 cache:
   directories:
-    - node_modules
+  - node_modules
 script:
-  - npm run eslint
-  - npm run build
+- npm run eslint
+- npm run build
 deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  local_dir: build
-  on:
+  provider: heroku
+api_key:
+    secure: $API_KEY
+app: hacker-news-srr
+on:
+    repo: sivasankar9/react-hacker-news-ssr
     branch: master
