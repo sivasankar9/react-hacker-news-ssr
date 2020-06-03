@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-- stable
+  - stable
 cache:
   directories:
   - node_modules
@@ -9,9 +9,10 @@ script:
 - npm run build
 deploy:
   provider: heroku
+  edge: true
 api_key:
-  secure: $API_KEY
+    secure: $API_KEY
 app: hacker-news-srr
-true:
+on:
   repo: sivasankar9/react-hacker-news-ssr
   branch: master
