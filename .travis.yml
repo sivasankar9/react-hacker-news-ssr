@@ -1,17 +1,17 @@
 language: node_js
 node_js:
-- stable
+  - stable
 cache:
   directories:
-  - node_modules
+    - node_modules
 script:
-- npm run eslint
-- npm run build
+  - npm run eslint
+  - npm run build
 deploy:
   provider: heroku
-api_key:
+  api_key:
     secure: $API_KEY
 app: hacker-news-srr
 on:
-    repo: sivasankar9/react-hacker-news-ssr
-    branch: master
+  repo: sivasankar9/react-hacker-news-ssr
+  branch: master
